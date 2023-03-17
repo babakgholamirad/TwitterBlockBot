@@ -137,5 +137,4 @@ Settings/wsgi.py
 .vscode
 
 # Database
-db.sqlite
-db.sqlite-journal
+db
