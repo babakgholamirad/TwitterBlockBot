@@ -127,3 +127,15 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Settings of Project is Diffrent on local and deployment
+Settings/settings.py
+Settings/asgi.py
+Settings/wsgi.py
+
+# VScode Options
+.vscode
+
+# Database
+db.sqlite
+db.sqlite-journal
