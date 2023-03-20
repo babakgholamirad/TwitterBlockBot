@@ -10,13 +10,16 @@ bearer_token = os.environ.get("BEARER_TOKEN")
 def create_url():
     # Specify the usernames that you want to lookup below
     # You can enter up to 100 comma-separated values.
-    usernames = "usernames=TwitterDev,TwitterAPI"
-    user_fields = "user.fields=description,created_at"
+    usernames = ["TwitterDev", "TwitterAPI", "BGholamirad"]
+    user_fields = ["id", "username", "description", "created_at"]
     # User fields are adjustable, options include:
     # created_at, description, entities, id, location, name,
     # pinned_tweet_id, profile_image_url, protected,
     # public_metrics, url, username, verified, and withheld
-    url = "https://api.twitter.com/2/users/by?{}&{}".format(usernames, user_fields)
+
+    url = "https://api.twitter.com/2/users/by?usernames={}&user.fields={}".format(
+        ",".join(usernames), ",".join(user_fields))
+
     return url
 
 
