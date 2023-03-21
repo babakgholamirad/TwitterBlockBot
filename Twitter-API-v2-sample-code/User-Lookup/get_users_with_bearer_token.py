@@ -7,11 +7,10 @@ import json
 bearer_token = os.environ.get("BEARER_TOKEN")
 
 
-def create_url():
+def create_url(usernames, user_fields):
     # Specify the usernames that you want to lookup below
     # You can enter up to 100 comma-separated values.
-    usernames = ["TwitterDev", "TwitterAPI", "BGholamirad"]
-    user_fields = ["id", "username", "description", "created_at"]
+
     # User fields are adjustable, options include:
     # created_at, description, entities, id, location, name,
     # pinned_tweet_id, profile_image_url, protected,
@@ -46,7 +45,10 @@ def connect_to_endpoint(url):
 
 
 def main():
-    url = create_url()
+    url = create_url(
+        usernames=["TwitterDev", "TwitterAPI", "BGholamirad"],
+        user_fields=["id", "username"])
+
     json_response = connect_to_endpoint(url)
     print(json.dumps(json_response, indent=4, sort_keys=True))
 
